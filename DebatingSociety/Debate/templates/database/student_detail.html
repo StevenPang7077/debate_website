@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+<html>
+	{% block content %}
+	<h4>{{student}} {{student.grad_year}}'</h4>
+	<table>
+		<tr>
+			<td class = 'performance-detail-box'><h6>Average Advanced Score:</h6></td>
+			<td class = 'performance-detail-box'><h6>{{student.average_advanced_round_score}}</h6></td>
+			<td class = 'performance-detail-box'><h6>Average Novice Score:</h6></td>
+			<td class = 'performance-detail-box'><h6>{{student.average_novice_round_score}}</h6></td>
+			<td class = 'performance-detail-box'><h6>Average Score:</h6></td>
+			<td class = 'performance-detail-box'><h6>{{student.average_round_score}}</h6></td>
+		</tr>
+		<tr>
+			<td class = 'performance-detail-box'><h6>Average Rank in Room:</h6></td>
+			<td class = 'performance-detail-box'><h6>{{student.average_rank_in_room}}</h6></td>
+			<td class = 'performance-detail-box'><h6>Win/Loss Ratio:</h6></td>
+			<td class = 'performance-detail-box'><h6>{{student.win_loss_ratio}}</h6></td>
+		</tr>
+	</table>
+
+	{% for performance in performances %}
+		<table>
+			<tr>
+				<td class = 'performance-round-box' colspan = 4><a href = "{% url 'performance-detail' performance.pk %}"><h4>{{performance.tournament.date}} {{performance.tournament.school}}</h4></td></a>
+			</tr>
+			<tr>
+				<td class = 'performance-round-box'><h5>Total Score:</h5></td>
+				<td class = 'performance-round-box'><h7>{{performance.score}}</h7></td>
+				<td class = 'performance-round-box'><h5>Total Rank in Room:</h5></td>
+				<td class = 'performance-round-box'><h7>{{performance.rank_in_room_total}}</h7></td>
+			</tr>
+			<tr>
+				<td class = 'performance-round-box'><h5>Wins:</h5></td>
+				<td class = 'performance-round-box'><h7>{{performance.wins}}</h7></td>
+			</tr>
+
+		</table>
+	{% endfor %}
+	{% endblock %}
+</html>

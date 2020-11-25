@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+<html>
+{% block content %}
+<h4>{{performance}}</h4>
+<table>
+	<tr>
+		<td class = 'performance-detail-box'><h6>Score:</h6></td>
+		<td class = 'performance-detail-box'><h6>{{performance.score}}</h6></td>
+		<td class = 'performance-detail-box'><h6>Total Wins:</h6></td>
+		<td class = 'performance-detail-box'><h6>{{performance.wins}}</h6></td>
+		<td class = 'performance-detail-box'><h6>Rank in Room(total):</h6></td>
+		<td class = 'performance-detail-box'><h6>{{performance.rank_in_room_total}}</h6></td>
+	</tr>
+
+</table>
+
+{% for round in rounds %}
+	<table>
+		<tr>
+			<td class = 'performance-round-box'><h4>Round {{round.round_number}}:</h4></td>
+		</tr>
+		<tr>
+			<td class = 'performance-round-box'><h5>Type:</h5></td>
+			<td class = 'performance-round-box'><h7>{{round.form}}</h7></td>
+			<td class = 'performance-round-box'><h5>Division:</h5></td>
+			<td class = 'performance-round-box'><h7>{{round.division}}</h7></td>
+		</tr>
+		<tr>
+			<td class = 'performance-round-box'><h5>Score:</h5></td>
+			<td class = 'performance-round-box'><h7>{{round.score}}</h7></td>
+			<td class = 'performance-round-box'><h5>Rank in Room:</h5></td>
+			<td class = 'performance-round-box'><h7>{{round.rank_in_room}}</h7></td>
+		</tr>
+		<tr>
+			<td class = 'performance-round-box'><h5>Wins:</h5></td>
+			<td class = 'performance-round-box'><h7>{{round.win}}</h7></td>
+		</tr>
+		<tr>
+			<td class = 'performance-round-box'><h5>Comment:</h5></td>
+		</tr>
+		<tr>
+			<td class = 'performance-round-box' colspan = 4 ><h7>{{round.comment}}</h7></td>
+		</tr>
+	</table>
+	<br>
+	<br>
+{% endfor %}
+{% for award in awards %}
+	<h5>{{award.placement}} {{award.form}} at {{award.tournament}}</h5>
+{% endfor %}
+{% endblock %}
+</html>

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+<html>
+{% block content %}
+	<div class = "split left-split">
+		<h2>Advanced</h2>
+		<table class = "leaderboard-table">
+			{% for student in ranked_by_advanced %}
+			<tr>
+				<td class = "leaderboard-number">
+				<h5>{{student.2}}</h5>
+				</td>
+				<td class = "leaderboard-name">
+				<a href = "{% url 'student-detail' student.0.pk %}" > <h5>{{student.0}}</h5> </a>
+				</td>
+				<td class = "leaderboard-score">
+				<h5>{{student.1}}<h5>
+				</td>
+			{% endfor %}
+		</table>
+	</div>
+
+	<div class = "split center-split">
+		<h2>Novice</h2>
+		<table class = "leaderboard-table">
+			{% for student in ranked_by_novice %}
+			<tr>
+				<td class = "leaderboard-number">
+				<h5>{{student.2}}</h5>
+				</td>
+				<td class = "leaderboard-name">
+				<a href = "{% url 'student-detail' student.0.pk %}" ><h5>{{student.0}}</h5></a>
+				</td>
+				<td class = "leaderboard-score">
+				<h5>{{student.1}}<h5>
+				</td>
+			{% endfor %}
+		</table>
+	</div>
+
+	<div class = "split right-split">
+		<h2>All</h2>
+		<table class = "leaderboard-table">
+			{% for student in ranked_by_all %}
+			<tr>
+				<td class = "leaderboard-number">
+				<h5>{{student.2}}</h5>
+				</td>
+				<td class = "leaderboard-name">
+				<a href = "{% url 'student-detail' student.0.pk %}" ><h5>{{student.0}}</h5></a>
+				</td>
+				<td class = "leaderboard-score">
+				<h5>{{student.1}}<h5>
+				</td>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}
+
+</html>

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+<html>
+	{% block content %}
+	{% for tournament in tournaments %}
+	<ul>
+		<li><a href = "{% url 'tournament-detail' tournament.pk %}"><h4>{{tournament}}</h4></a></li>
+	</ul>
+	{% endfor %}
+	{% endblock %}
+</html>

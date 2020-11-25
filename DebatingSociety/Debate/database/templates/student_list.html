@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+<html>
+	{% block content %}
+		<ul>
+		{% for student in students%}
+			<li><a href = "{% url 'student-detail' student.pk %}">{{student}}</a></li>
+		{% endfor %}
+		</ul>
+	{% endblock %}
+</html>

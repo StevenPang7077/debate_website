@@ -1,0 +1,98 @@
+.top-header {
+	top:0;
+	width: 100%;
+	z-index: 2;
+	height: 15%;	
+	background-color: white;
+}
+
+.header {
+	text-align: center;
+	width: 100%;
+	border-style: dotted;
+}
+
+.split {
+	height: 100%;
+	width: 25%;
+	top: 15;
+	position: fixed;
+	z-index: 1;
+	overflow-x: hidden;
+	padding-top: 20px;
+}
+
+.left-split {
+	left: 15%;
+	padding-left: 10px
+}
+
+.right-split {
+	left: 65%;
+	padding-left: 10px
+}
+
+.center-split {
+	left: 40%;
+}
+
+.sidebar {
+	left: 0;
+	height: 100%;
+	width: 15%;
+	top: 15;
+	position: absolute;
+	z-index: 1;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding-top: 20px;
+	padding-left: 0px;
+	border-style: none double none none;
+}
+
+.body {
+	right: 0;
+	height: 100%;
+	width: 85%;
+	top: 25px;
+	position: fixed;
+	z-index: 1;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding-top: 40px;
+}
+
+.leaderboard-number {
+	text-align: left;
+	width: 10%;
+	height: 15px;
+}
+
+.leaderboard-name {
+	text-align: left;
+	width: 70%;
+	height: 15px;
+}
+
+.leaderboard-score {
+	width: 20%;
+	height: 15px;
+}
+
+.leaderboard-table {
+	width: 100%;
+	border-style: none dotted none none
+}
+
+.performance-detail-box {
+	width: 175px;
+	padding-left: 10px;
+	text-align: left;
+	border-style: none;
+}
+
+.performance-round-box {
+	width: 280px;
+	padding-left: 10px;
+	text-align: left;
+}

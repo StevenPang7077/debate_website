@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+<html>
+	{% block content %}
+		<h1>{{tournament}}</h1>
+		{% for performance in performances %}
+			<table>
+				<tr>
+					<td class = 'performance-round-box' colspan = 4><a href = "{% url 'performance-detail' performance.pk %}"><h4>{{performance.student}}'s Performance</h4></td></a>
+				</tr>
+				<tr>
+					<td class = 'performance-round-box'><h5>Total Score:</h5></td>
+					<td class = 'performance-round-box'><h7>{{performance.score}}</h7></td>
+					<td class = 'performance-round-box'><h5>Total Rank in Room:</h5></td>
+					<td class = 'performance-round-box'><h7>{{performance.rank_in_room_total}}</h7></td>
+				</tr>
+				<tr>
+					<td class = 'performance-round-box'><h5>Wins:</h5></td>
+					<td class = 'performance-round-box'><h7>{{performance.wins}}</h7></td>
+				</tr>
+
+			</table>
+		{% endfor %}
+	{% endblock %}
+</html>
